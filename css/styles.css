@@ -131,15 +131,19 @@ main {
     border: none;
     padding: .7rem;
     border-radius: 0rem .5rem .5rem 0rem;
-    background-color: var(--clr-white);
     width: 100%;
     margin-left: 0;
     cursor: pointer;
+    background-color: var(--clr-main)
 }
 
 .dark-mode {
     background-color: black !important; 
-    
+
+}
+
+.dark-mode button {
+    color: rgb(77, 77, 77)
 }
 
 .dark-mode h1,p{
@@ -165,3 +169,18 @@ main {
     border: none;
 }
 
+.active {
+    background-color: var(--clr-white) !important;
+}
+
+.carrito{
+    display: inline-flex;
+    justify-content: center;
+    padding: .15rem;
+    margin-top: .8rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    background-color: var(--clr-white);
+    border: none;
+    border-radius: .2rem;
+}

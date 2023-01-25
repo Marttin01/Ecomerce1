@@ -6,22 +6,26 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     
-    <title>Inico</title>
+    <title>Carrito</title>
 </head>
 <body>
 <section id="grilla">
     <main >
-        <h2 class="titulo-main" id="titulo-principal">Todos los productos</h2> 
-        
-        <!-- <i class="bi bi-brightness-high-fill" id="color-icon"></i> -->
+        <h2 class="titulo-main" id="titulo-principal">Carrito</h2> 
         <i class="bi bi-moon-fill" id="color-icon"></i>
            
-
-        <div class="contenedor-productos" id="contenedor-productos" >
-            
-
+        <div class="contenedor-carrito">
+            <p class="carrito-vacio">Tu carrito esta vacio :(</p>
+            <div class="carrito-producto">
+                <div class="carrito-producto">
+                    <img src="" alt="">
+                    <div class="carrito-producto-nombre">
+                        
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -33,11 +37,8 @@
 
         <nav class="lista-aside">
         <ul style="display: flex; gap: 2rem; flex-direction: column;">
-            <li ><button class="boton-lista active" id="todos"> Pagina principal</button></li>
-            <li ><button class="boton-lista" id="silla-gamer"> Sillas gamer</button></li>
-            <li ><button class="boton-lista" id="silla-oficina"> Sillas de oficina</button></li>
-            <li ><button class="boton-lista" id="silla-rustica"> Sillas rusticas</button></li> 
-            <li > <a href="./pages/carrito.html"> <button class="boton-lista"> Carrito </button><button class="carrito"> 0 </button> </a> </li> 
+            <li > <a href="../index.html"><button class="boton-lista"> Seguir Comprando</button> </a> </li>
+            <li > <a href="carrito.html"> <button class="boton-lista active"> Carrito </button> </a> </li> 
         </ul>
         
         </nav>
