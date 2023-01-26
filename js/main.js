@@ -291,10 +291,11 @@ function cargarProductos (productosElegidos)  {
             <button class="producto-agregar" id="agregar" id= "${producto.id}">Agregar</button>
         </div>
         `;
-
+        
         contenedorProducto.append(div);
         
     })
+    
 }
 
 cargarProductos (productos);
@@ -307,13 +308,14 @@ const tituloPrincipal = document.querySelector("#titulo-principal")
 
 botonLista.forEach(boton => {
     boton.addEventListener('click', (e) => {
-
-
+        
+        
         if (e.currentTarget.id != "todos") {
             const productoCategoria = productos.find(producto => producto.categoria.id === e.currentTarget.id)
             tituloPrincipal.innerText = productoCategoria.categoria.nombre;
             const productosBoton = productos.filter(producto => producto.categoria.id === e.currentTarget.id)    
             cargarProductos(productosBoton);
+            
         }else {
             cargarProductos(productos);
             tituloPrincipal.innerText = "Todos los productos";
@@ -323,6 +325,7 @@ botonLista.forEach(boton => {
 
         botonLista.forEach(boton => {
             boton.classList.remove("active")
+            
         })
 
         e.currentTarget.classList.add("active")
@@ -360,7 +363,7 @@ function cambiarModoColor ()  {
     }
     for(let i = 0; i < detalles.length; i++) {
         detalles[i].classList.toggle("dark-mode")
-    };
+    }
     for(let i = 0; i < productoAgregar.length; i++) {
         productoAgregar[i].classList.toggle("dark-mode-letter")
     }
