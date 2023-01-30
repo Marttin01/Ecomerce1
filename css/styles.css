@@ -186,7 +186,9 @@ main {
 }
 
 /*CARRITO*/
-
+.carrito-vacio {
+    color: var(--clr-main) !important;
+}
 .contenedor-carrito {
     display: flex;
     flex-direction: column;
@@ -270,4 +272,8 @@ main {
     color: var(--clr-white);
     text-transform: uppercase;
     cursor: pointer;
+}
+
+.disabled {
+    display: none ;
 }

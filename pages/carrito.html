@@ -17,11 +17,11 @@
         <i class="bi bi-moon-fill" id="color-icon"></i>
            
         <div class="contenedor-carrito">
-            <p class="carrito-vacio">Tu carrito esta vacio :(</p>
-            <div class="carrito-productos">
+            <p class="carrito-vacio" id="carrito-vacio">Tu carrito esta vacio :(</p>
+            <div class="carrito-productos disabled" id="carrito-productos">
 
 
-                <div class="carrito-producto">
+                <div class="carrito-producto ">
                     <img class="carrito-producto-imagen" src="../img/silla-gamer1.jpg" alt="">
                     <div class="carrito-producto-titulo">
                         <small>Titulo</small>   
@@ -65,7 +65,7 @@
 
             </div>
 
-            <div class="carrito-acciones">
+            <div  id="carrito-acciones" class="carrito-acciones disabled">
 
                 <div class="carrito-acciones-izquierda">
 
@@ -82,9 +82,8 @@
                     <button class="carrito-acciones-comprar">Comprar ahora</button>
                 </div>
 
-            </div>
-
-            <p class="carrito-vacio">Muchas gracias  por tu comprar :)</p>
+            </div> 
+             <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias  por tu comprar :)</p>
         </div>
     </main>
 
@@ -109,7 +108,7 @@
     </aside>
 </section>
 
+<script src="../js/carrito.js"></script>
 <script src="./js/main.js"></script>
-<script src="./js/carrito.js"></script>
 </body>
 </html>
