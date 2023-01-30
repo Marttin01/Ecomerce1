@@ -1,11 +1,18 @@
-const productosEncarrito = JSON.parse(localStorage.getItem("productos-en-carrito"));
+let productosEncarrito = localStorage.getItem("productos-en-carrito");
+productosEncarrito = JSON.parse(productosEncarrito)
 
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio") 
 const contenedorCarritoProductos = document.querySelector("#carrito-productos") 
 const contenedorCarritoAcciones = document.querySelector("#carrito-acciones") 
 const contenedorCarritoComprado = document.querySelector("#carrito-comprado") 
+let botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar")
+const botonVaciar = document.querySelector("#carrito-acciones-vaciar")
+const contenedorTotal = document.querySelector("#total")
 
-if(productosEncarrito) {
+function cargarProductosCarrito () {
+if(productosEncarrito && productosEncarrito.length > 0 ) {
+
+
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.remove("disabled");
     contenedorCarritoAcciones.classList.remove("disabled");
@@ -42,6 +49,50 @@ if(productosEncarrito) {
 
     })
 
+} else {
+    contenedorCarritoVacio.classList.remove("disabled");
+    contenedorCarritoProductos.classList.add("disabled");
+    contenedorCarritoAcciones.classList.add("disabled");
+    contenedorCarritoComprado.classList.add("disabled");
+}
+
+actualizarBotonesEliminar()
+}
+
+cargarProductosCarrito ();
+
+actualizarBotonesEliminar();
 
 
+function actualizarBotonesEliminar() {
+    botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
+
+    botonesEliminar.forEach(boton => {
+        boton.addEventListener("click", eliminarDelCarrito);
+    });
+    
+}
+
+function eliminarDelCarrito (e) {
+    const idBoton = e.target.id
+    const index = productosEncarrito.findIndex(producto => producto.id === idBoton)
+
+    productosEncarrito.splice(index, 1);
+    cargarProductosCarrito ();
+
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEncarrito) )
+}
+
+botonVaciar.addEventListener("click", vaciarCarrito);
+
+function vaciarCarrito() {
+
+    productosEncarrito.length = 0;
+    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEncarrito));
+    cargarProductosCarrito ();
+}
+
+
+function actualizarTotal() {
+    actualizarTotal.innerText = productosEncarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0 )
 }

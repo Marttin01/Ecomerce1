@@ -392,7 +392,22 @@ function actualizarBotonesAgregar() {
     
 }
 
-const productosEnCarrito = [];
+// const productosEncarritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
+// if (productosEncarritoLS) {
+//     let productosEncarrito = productosEncarritoLS
+// }
+
+let productosEnCarrito;
+
+let productosEnCarritoLS = localStorage.getItem("productos-en-carrito")
+// const productosEnCarritoLS = JSON.parse(localStorage.getItem("productos-en-carrito"));
+
+if (productosEnCarritoLS) {
+    productosEnCarrito = JSON.parse(productosEnCarritoLS);
+    actualizarNumerito();
+}else {
+    productosEnCarrito = [];
+}
 
 
 function agregarAlCarrito(e) {
