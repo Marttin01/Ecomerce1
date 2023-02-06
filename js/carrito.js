@@ -85,7 +85,29 @@ function eliminarDelCarrito (e) {
     localStorage.setItem("productos-en-carrito", JSON.stringify(productosEncarrito) )
 }
 
-botonVaciar.addEventListener("click", vaciarCarrito);
+botonVaciar.addEventListener("click", () => {
+    Swal.fire({
+        title: '¿Esta seguro?',
+        text: 'Va a vaciar todo el carrito',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: 'var(--clr-main)',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then ((result) => {
+        if(result.isConfirmed) {
+            Swal.fire(
+                'Eliminado',
+                'El carrito ha sido eliminado',
+                'success'
+            )
+            vaciarCarrito();
+        }
+    })
+})
+
+// botonVaciar.addEventListener("click", vaciarCarrito);
 
 function vaciarCarrito() {
 
@@ -99,6 +121,16 @@ function actualizarTotal() {
     const totalCalculado = productosEncarrito.reduce((acc, producto) => acc + (producto.precio * producto.cantidad), 0 )
     total.innerText = `$${totalCalculado}`;
 }
+
+botonComprar.addEventListener("click", () => {
+    Swal.fire({
+        icon: 'success',
+        title: 'Compra exitosa!',
+        text: 'Compra realizada correctamente',
+        confirmButtonText: 'Aceptar',
+        confirmButtonColor: 'var(--clr-main)'
+    })
+})
 
 botonComprar.addEventListener("click", comprarCarrito);
 
