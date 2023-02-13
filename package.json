@@ -1,0 +1,23 @@
+{
+  "name": "ecomerce1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marttin01/Ecomerce1.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Marttin01/Ecomerce1/issues"
+  },
+  "homepage": "https://github.com/Marttin01/Ecomerce1#readme",
+  "dependencies": {
+    "sweetalert2": "^11.7.1",
+    "toastify": "^2.0.1"
+  }
+}
